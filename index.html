@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SDL — Estratégia e financiamento para projetos de inovação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --navy:#0B1120; --surface:#F5F7FA; --text:#0A0F1E; --muted:#5B6472;
+    --amber:#C9A227; --emerald:#0F766E; --blue:#1E3A8A;
+  }
+  body{ font-family:'Inter',sans-serif; color:var(--text); background:var(--surface); }
+  .display{ font-family:'Fraunces',serif; font-optical-sizing:auto; }
+  .eyebrow{ letter-spacing:.22em; text-transform:uppercase; font-size:.7rem; font-weight:600; }
+  .gold{ color:var(--amber); }
+  .emerald{ color:var(--emerald); }
+  .hairline{ border-color:rgba(10,15,30,.12); }
+  .num{ font-family:'Fraunces',serif; font-variant-numeric:lining-nums; }
+  .scroll-smooth{ scroll-behavior:smooth; }
+  .grid-line{ background-image:linear-gradient(to bottom, rgba(245,247,250,.05) 1px, transparent 1px); background-size:100% 64px; }
+  .btn-inline{ border-bottom:1px solid rgba(201,162,39,.4); transition:border-color .2s; }
+  .btn-inline:hover{ border-color:var(--amber); }
+  .card{ background:#fff; border:1px solid rgba(10,15,30,.08); }
+  /* Contraste reforçado para as lâminas de fundo escuro (melhor leitura em projeção) */
+  .bg-\[\#0B1120\] .text-\[\#8A93A6\]{ color:#C6CFDF !important; }
+  .bg-\[\#0B1120\] .text-\[\#A9B2C4\]{ color:#DCE2EC !important; }
+  .bg-\[\#0B1120\] .text-\[\#BFC6D4\]{ color:#E6EBF3 !important; }
+  .bg-\[\#0B1120\] .text-\[\#9AA4B8\]{ color:#DCE2EC !important; }
+  .bg-\[\#0B1120\] .text-\[\#6B7280\]{ color:#B7C1D1 !important; }
+  .bg-\[\#0B1120\] h1, .bg-\[\#0B1120\] h2, .bg-\[\#0B1120\] h3{ text-shadow:0 1px 2px rgba(0,0,0,.25); }
+</style>
+</head>
+<body class="scroll-smooth antialiased">
+
+<!-- ===================== HERO ===================== -->
+<section class="relative overflow-hidden bg-[#0B1120] text-[#F5F7FA]">
+  <div class="absolute inset-0 grid-line opacity-60"></div>
+  <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <p class="eyebrow gold mb-6">SDL Consultoria</p>
+    <h1 class="display text-4xl md:text-6xl font-normal leading-[1.05] max-w-4xl">
+      Estratégia e financiamento para <span class="gold font-medium">projetos de inovação</span>.
+    </h1>
+    <p class="mt-8 max-w-xl text-lg text-[#BFC6D4] font-normal leading-relaxed">
+      Estruturar e viabilizar o próximo projeto de inovação da sua empresa — da identificação da oportunidade à prestação de contas.
+    </p>
+    <div class="mt-12 flex flex-wrap gap-x-10 gap-y-6 text-sm text-[#9AA4B8]">
+      <div class="flex items-start gap-3">
+        <span class="num text-2xl font-light text-[#F5F7FA] leading-none whitespace-nowrap">1,2%</span>
+        <span class="flex flex-col gap-0.5"><span class="text-[#F5F7FA]">do PIB investido em P&amp;D</span><span class="text-[#8A93A6]">Brasil · MCTI</span></span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="num text-2xl font-light text-[#F5F7FA] leading-none whitespace-nowrap">4.252</span>
+        <span class="flex flex-col gap-0.5"><span class="text-[#F5F7FA]">empresas na Lei do Bem</span><span class="text-[#8A93A6]">2024 · MCTI</span></span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="num text-2xl font-light text-[#F5F7FA] leading-none whitespace-nowrap">R$ 10 bi</span>
+        <span class="flex flex-col gap-0.5"><span class="text-[#F5F7FA]">Finep · Move Agrícola</span><span class="text-[#8A93A6]">Aquisição Inovadora</span></span>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="num text-2xl font-light text-[#F5F7FA] leading-none whitespace-nowrap">R$ 132,6 mi</span>
+        <span class="flex flex-col gap-0.5"><span class="text-[#F5F7FA]">1º Centro de Protonterapia</span><span class="text-[#8A93A6]">Finep</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUEM SOMOS ===================== -->
+<section class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <p class="eyebrow gold mb-4">Quem somos</p>
+  <div class="grid gap-12 md:grid-cols-2 md:gap-16">
+    <h2 class="display text-3xl md:text-4xl font-light leading-snug">
+      Transformamos inovação em <span class="gold">projeto financiável</span> — e executável.
+    </h2>
+    <div class="space-y-5 text-[#3d4554] font-light leading-relaxed">
+      <p>
+        A <strong class="font-semibold text-[#0A0F1E]">SDL Consultoria</strong> atua na estruturação, captação, execução e acompanhamento de projetos de inovação financiados. Conecta a estratégia empresarial, o financiamento adequado e a execução para transformar uma ideia em investimento de fato.
+      </p>
+      <p>
+        O trabalho combina visão sistêmica da estratégia empresarial e do mercado-alvo com domínio dos instrumentos de fomento — nacionais, estaduais e regionais.
+      </p>
+      <div class="pt-2">
+        <p class="eyebrow text-[#8A93A6] mb-3">Liderança</p>
+        <ul class="space-y-2 text-sm">
+          <li><strong class="font-semibold text-[#0A0F1E]">Stenio Diniz</strong> — Administrador e Mestre em Propriedade Intelectual.</li>
+          <li><strong class="font-semibold text-[#0A0F1E]">Análio Rodrigues</strong> — Mestre em Economia e Inovação.</li>
+          <li><strong class="font-semibold text-[#0A0F1E]">Ruan Rodrigues</strong> — Engenheiro de Produção e Mestre em Propriedade Intelectual.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO ATUAMOS (3 PILARES) ===================== -->
+<section class="bg-[#0B1120] text-[#F5F7FA]">
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <p class="eyebrow gold mb-4">Como atuamos</p>
+    <h2 class="display text-3xl md:text-4xl font-light max-w-2xl mb-14">
+      Uma jornada em três movimentos.
+    </h2>
+    <div class="grid gap-px overflow-hidden rounded-2xl bg-white/10 md:grid-cols-3">
+      <div class="bg-[#0B1120] p-8">
+        <span class="num text-5xl font-light gold">01</span>
+        <h3 class="display text-xl font-medium mt-5 mb-3">Estratégia de inovação</h3>
+        <p class="text-[#A9B2C4] font-light leading-relaxed">Identificação de oportunidades, modelagem do projeto e conexão com os objetivos de crescimento da empresa.</p>
+      </div>
+      <div class="bg-[#0B1120] p-8">
+        <span class="num text-5xl font-light gold">02</span>
+        <h3 class="display text-xl font-medium mt-5 mb-3">Financiamento</h3>
+        <p class="text-[#A9B2C4] font-light leading-relaxed">Enquadramento no instrumento adequado e estruturação técnico-financeira para a submissão.</p>
+      </div>
+      <div class="bg-[#0B1120] p-8">
+        <span class="num text-5xl font-light gold">03</span>
+        <h3 class="display text-xl font-medium mt-5 mb-3">Execução</h3>
+        <p class="text-[#A9B2C4] font-light leading-relaxed">Acompanhamento técnico-financeiro, adequações, interface institucional e suporte à prestação de contas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== O QUE ENTREGAMOS (4 ÁREAS) ===================== -->
+<section class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <p class="eyebrow gold mb-4">O que entregamos</p>
+  <h2 class="display text-3xl md:text-4xl font-light max-w-2xl mb-14">
+    Quatro áreas, um mesmo fio condutor: <span class="gold">viabilizar a inovação</span>.
+  </h2>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <article class="card rounded-2xl p-8">
+      <span class="inline-block rounded-full bg-[#1E3A8A]/10 px-3 py-1 text-xs font-medium text-[#1E3A8A]">Finanças para Inovação</span>
+      <p class="mt-5 text-[#3d4554] font-light leading-relaxed">Viabilidade financeira de projetos de inovação, estratégia de captação e escrita de projetos — com acompanhamento e prestação de contas.</p>
+      <p class="mt-4 text-sm text-[#8A93A6]">Parceiro: SDL · <span class="text-[#0F766E]">instrumentos Finep, FNDCT, Lei do Bem, FAPs</span></p>
+    </article>
+
+    <article class="card rounded-2xl p-8">
+      <span class="inline-block rounded-full bg-[#0F766E]/10 px-3 py-1 text-xs font-medium text-[#0F766E]">Propriedade Intelectual</span>
+      <p class="mt-5 text-[#3d4554] font-light leading-relaxed">Proteção de ativos intangíveis e transferência de tecnologia: laudo técnico, registro de marcas, patentes e indicação geográfica.</p>
+      <p class="mt-4 text-sm text-[#8A93A6]">Parceiro: Registro Simplificado · <span class="text-[#0F766E]">+24 anos · +20 mil marcas</span></p>
+    </article>
+
+    <article class="card rounded-2xl p-8">
+      <span class="inline-block rounded-full bg-[#0B1120]/10 px-3 py-1 text-xs font-medium text-[#0B1120]">Finanças Corporativas</span>
+      <p class="mt-5 text-[#3d4554] font-light leading-relaxed">Gestão financeira de empresas de médio porte: planejamento, tesouraria, fluxo de caixa, capital de giro e decisão de investimento.</p>
+      <p class="mt-4 text-sm text-[#8A93A6]">Parceiro: Triven · <span class="text-[#0F766E]">CFaaS · FaaS · Setup · Findrive · PaaS</span></p>
+    </article>
+
+    <article class="card rounded-2xl p-8">
+      <span class="inline-block rounded-full bg-[#C9A227]/15 px-3 py-1 text-xs font-medium text-[#B58C1E]">Modelagem de Negócios</span>
+      <p class="mt-5 text-[#3d4554] font-light leading-relaxed">Mentoria e capacitação para negócios nascentes e de médio porte — e a gestão do desenvolvimento de soluções de TI como suporte.</p>
+      <p class="mt-4 text-sm text-[#8A93A6]">Parceiro: SDL · <span class="text-[#0F766E]">Coti · Multiplicidades · Instituto Levvo · CompreUp</span></p>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== PROVA / PORTFÓLIO ===================== -->
+<section class="bg-[#0B1120] text-[#F5F7FA]">
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <p class="eyebrow gold mb-4">Prova</p>
+    <h2 class="display text-3xl md:text-4xl font-light max-w-2xl mb-12">
+      Portfólio real, em setores diversos — e resultados que sustentam a proposta.
+    </h2>
+
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-[#A9B2C4] font-light leading-relaxed mb-6">
+          Na linha de <strong class="font-semibold text-[#F5F7FA]">Finanças para Inovação</strong>, a SDL atende o <strong class="font-semibold text-[#F5F7FA]">Instituto Levvo</strong> e um portfólio de <strong class="font-semibold text-[#F5F7FA]">12 clientes</strong> financiados via Finep.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Cimento Apodi</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">CIALNE</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Integral Agroindustrial</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Chemyunion</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">ADERE</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Lajes Anhanguera</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Marquise</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Atlântica Agroindústria</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Sangati Berga</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Petro Rio</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">Aquafort</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-xs text-[#A9B2C4]">MDI</span>
+        </div>
+        <p class="mt-8 text-sm text-[#8A93A6]">Setores atendidos: agroindústria · indústria e materiais · tecnologia · serviços</p>
+      </div>
+
+      <div>
+        <p class="display text-lg text-[#A9B2C4] font-light mb-6">O contexto do fomento no Brasil — cifras de referência.</p>
+        <div class="grid grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden">
+          <div class="bg-[#0B1120] p-5">
+            <span class="num text-3xl text-[#F5F7FA]">4.252</span>
+            <p class="mt-1 text-xs text-[#8A93A6]">empresas na Lei do Bem (2024)</p>
+          </div>
+          <div class="bg-[#0B1120] p-5">
+            <span class="num text-3xl text-[#F5F7FA]">R$ 10 bi</span>
+            <p class="mt-1 text-xs text-[#8A93A6]">Finep — Aquisição Inovadora Move Agrícola</p>
+          </div>
+          <div class="bg-[#0B1120] p-5">
+            <span class="num text-3xl text-[#F5F7FA]">R$ 132,6 mi</span>
+            <p class="mt-1 text-xs text-[#8A93A6]">Finep — 1º Centro de Protonterapia</p>
+          </div>
+          <div class="bg-[#0B1120] p-5">
+            <span class="num text-3xl text-[#F5F7FA]">~1,2%</span>
+            <p class="mt-1 text-xs text-[#8A93A6]">P&D no Brasil em relação ao PIB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-2xl bg-white/5 p-6 md:p-8">
+      <p class="eyebrow text-[#8A93A6] mb-2">Estrutura de fomento</p>
+      <h3 class="display text-xl font-medium text-[#F5F7FA] mb-6">Linhas de financiamento Finep</h3>
+
+      <p class="text-xs font-medium uppercase tracking-wider text-[#8A93A6] mb-3">Crédito direto</p>
+      <div class="overflow-x-auto rounded-xl border border-white/10">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-white/5 text-[#A9B2C4]">
+            <tr><th class="px-3 py-2 font-medium">Produto / Linha</th><th class="px-3 py-2 font-medium">Taxa nominal</th><th class="px-3 py-2 font-medium">Carência</th><th class="px-3 py-2 font-medium">Prazo total</th><th class="px-3 py-2 font-medium">Participação</th></tr>
+          </thead>
+          <tbody class="text-[#A9B2C4]">
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Finep Mais Inovação</td><td class="px-3 py-2">TR + 2,0% a 2,5% a.a.</td><td class="px-3 py-2">até 48 meses</td><td class="px-3 py-2">até 192 meses</td><td class="px-3 py-2">até 90%</td></tr>
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Finep Apoio Direto à Inovação</td><td class="px-3 py-2">TR + 3,5% a 7,0% a.a.</td><td class="px-3 py-2">até 48 meses</td><td class="px-3 py-2">96 a 168 meses</td><td class="px-3 py-2">até 80%–90%</td></tr>
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Finep Pré-Investimento</td><td class="px-3 py-2">TR + 7,5% a.a.</td><td class="px-3 py-2">até 24 meses</td><td class="px-3 py-2">até 96 meses</td><td class="px-3 py-2">até 70%</td></tr>
+            <tr><td class="px-3 py-2 text-[#F5F7FA]">Finep Direto Telecom</td><td class="px-3 py-2">TR + 2,5% a 5,5% a.a.</td><td class="px-3 py-2">36 a 48 meses</td><td class="px-3 py-2">120 a 240 meses</td><td class="px-3 py-2">até 90%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs font-medium uppercase tracking-wider text-[#8A93A6] mt-6 mb-3">Crédito via agentes (descentralizado)</p>
+      <div class="overflow-x-auto rounded-xl border border-white/10">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-white/5 text-[#A9B2C4]">
+            <tr><th class="px-3 py-2 font-medium">Produto / Linha</th><th class="px-3 py-2 font-medium">Valor máximo</th><th class="px-3 py-2 font-medium">Taxa nominal</th><th class="px-3 py-2 font-medium">Carência</th><th class="px-3 py-2 font-medium">Prazo total</th><th class="px-3 py-2 font-medium">Participação</th></tr>
+          </thead>
+          <tbody class="text-[#A9B2C4]">
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Inovacred / 4.0 / Telecom</td><td class="px-3 py-2">até R$ 30 mi</td><td class="px-3 py-2">TR + 6,068% / 6,605% a.a.</td><td class="px-3 py-2">até 24 meses</td><td class="px-3 py-2">até 96 meses</td><td class="px-3 py-2">até 100%</td></tr>
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Inovacred B+P</td><td class="px-3 py-2">até R$ 30 mi</td><td class="px-3 py-2">TR + 5,560% a.a.</td><td class="px-3 py-2">até 24 meses</td><td class="px-3 py-2">até 96 meses</td><td class="px-3 py-2">até 100%</td></tr>
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Inovacred Centros de P&D</td><td class="px-3 py-2">até R$ 30 mi</td><td class="px-3 py-2">TR + 6,080% a.a.</td><td class="px-3 py-2">até 24 meses</td><td class="px-3 py-2">até 120 meses</td><td class="px-3 py-2">até 100%</td></tr>
+            <tr class="border-b border-white/10"><td class="px-3 py-2 text-[#F5F7FA]">Aquisição Inovadora Telecom</td><td class="px-3 py-2">até R$ 30 mi</td><td class="px-3 py-2">TR + 7,083% a.a.</td><td class="px-3 py-2">até 24 meses</td><td class="px-3 py-2">até 120 meses</td><td class="px-3 py-2">até 100%</td></tr>
+            <tr><td class="px-3 py-2 text-[#F5F7FA]">Aquisição Inovadora Move Agrícola</td><td class="px-3 py-2">até R$ 30 mi</td><td class="px-3 py-2">TR + 7,120% a.a.</td><td class="px-3 py-2">não há</td><td class="px-3 py-2">até 60 meses</td><td class="px-3 py-2">até 100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 text-xs text-[#6B7280]">Fonte: Finep — Condições Operacionais 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <p class="eyebrow gold mb-4">Diferenciais</p>
+  <div class="grid gap-10 md:grid-cols-3">
+    <div class="border-t-2 border-[#C9A227] pt-6">
+      <h3 class="display text-xl font-medium mb-3">Visão de ponta a ponta</h3>
+      <p class="text-[#3d4554] font-light leading-relaxed">Estratégia, financiamento e execução no mesmo fluxo — do desenho do projeto à prestação de contas.</p>
+    </div>
+    <div class="border-t-2 border-[#0F766E] pt-6">
+      <h3 class="display text-xl font-medium mb-3">Domínio dos instrumentos</h3>
+      <p class="text-[#3d4554] font-light leading-relaxed">Acesso e entendimento dos mecanismos federais, estaduais e regionais de fomento (Finep, FNDCT, Lei do Bem, FAPs).</p>
+    </div>
+    <div class="border-t-2 border-[#1E3A8A] pt-6">
+      <h3 class="display text-xl font-medium mb-3">Portfólio verificado</h3>
+      <p class="text-[#3d4554] font-light leading-relaxed">Experiência real em setores variados, com clientes que renovam e ampliam seus projetos de inovação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO / FECHAMENTO ===================== -->
+<section class="bg-[#0B1120] text-[#F5F7FA]">
+  <div class="mx-auto max-w-6xl px-6 py-16 md:py-24 text-center">
+    <p class="eyebrow gold mb-4">Fale com a SDL</p>
+    <h2 class="display text-3xl md:text-5xl font-light leading-tight max-w-3xl mx-auto">
+      Estruturar e viabilizar o próximo projeto de inovação.
+    </h2>
+    <p class="mt-6 text-[#A9B2C4] font-light"><strong class="font-semibold text-[#F5F7FA]">SDL Consultoria</strong> · Estratégia e financiamento para projetos de inovação</p>
+    <p class="mt-2 text-sm text-[#8A93A6]">Documento interno — uso exclusivo da SDL.</p>
+  </div>
+</section>
+
+<footer class="bg-[#0B1120] border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-8 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-[#8A93A6]">
+    <span>SDL Consultoria · Apresentação institucional — dados de mercado <span class="text-[#A9B2C4]">revalidados em 31/08/2026</span>; revalidar a cada apresentação (MCTI · Finep).</span>
+    <span class="text-[#5B6472]">Base legal: Lei da Inovação 10.973/2004 · Lei do Bem 11.196/2005 · Programa Mover 14.902/2024</span>
+  </div>
+</footer>
+</body>
+</html>
